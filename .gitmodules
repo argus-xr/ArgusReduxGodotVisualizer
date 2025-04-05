@@ -1,0 +1,3 @@
+[submodule "ArgusReduxCore"]
+	path = ArgusReduxCore
+	url = https://github.com/argus-xr/ArgusReduxCore.git

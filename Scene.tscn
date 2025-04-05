@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm00ni8kkioq4"]
+
+[ext_resource type="PackedScene" uid="uid://c7672s2c2uocp" path="res://TrackerMarker.tscn" id="2_bv4jd"]
+[ext_resource type="Script" path="res://TrackerVisualizer.cs" id="2_vpegk"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.905473, 0.424405, 0, -0.424405, 0.905473, 0, 1, 2)
+
+[node name="TrackerVisualizer" type="Node" parent="."]
+script = ExtResource("2_vpegk")
+TrackerPrefab = ExtResource("2_bv4jd")

@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://c7672s2c2uocp"]
+
+[ext_resource type="Script" path="res://TrackerMarker.cs" id="1_e4vav"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cos07"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1ux6"]
+albedo_color = Color(0, 0, 1, 1)
+emission_enabled = true
+emission = Color(0, 0, 1, 1)
+emission_energy_multiplier = 0.2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_cow7m"]
+material = SubResource("StandardMaterial3D_g1ux6")
+top_radius = 0.01
+bottom_radius = 0.01
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_amknj"]
+albedo_color = Color(0, 1, 0, 1)
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+emission_energy_multiplier = 0.2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_831mu"]
+material = SubResource("StandardMaterial3D_amknj")
+top_radius = 0.01
+bottom_radius = 0.01
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dkum2"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 0.2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_n750a"]
+material = SubResource("StandardMaterial3D_dkum2")
+top_radius = 0.01
+bottom_radius = 0.01
+height = 0.2
+
+[node name="TrackerMarker" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_cos07")
+script = ExtResource("1_e4vav")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("CylinderMesh_cow7m")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0.1)
+mesh = SubResource("CylinderMesh_831mu")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0.1, 0, 0)
+mesh = SubResource("CylinderMesh_n750a")
