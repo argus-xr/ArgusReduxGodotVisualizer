@@ -1,3 +1,4 @@
+using ArgusGodotVisualizer;
 using ArgusReduxCore;
 using Godot;
 using System;
@@ -8,13 +9,11 @@ public partial class TrackerVisualizer : Node
 	[Export]
 	public PackedScene TrackerPrefab = null;
 
-	private TrackerManager tm;
 	private List<TrackerMarker> markers = new();
 
 	public override void _Ready()
 	{
-		tm = new TrackerManager();
-		tm.OnTrackerAdded += TrackerAdded;
+		ArgusCoreWrapper.TrackerManager.OnTrackerAdded += TrackerAdded;
 	}
 
 	private void TrackerAdded(Tracker tracker)
