@@ -2,7 +2,7 @@
   "profiles": {
     "Argus-Godot-Visualizer": {
       "commandName": "Executable",
-      "executablePath": "D:\\Skills\\Programming\\Godot_v4.3-stable_mono_win64\\Godot_v4.3-stable_mono_win64.exe",
+      "executablePath": "D:\\Skills\\Programming_Old\\Godot_v4.4.1-stable_mono_win64\\Godot_v4.4.1-stable_mono_win64.exe",
       "commandLineArgs": "--path . --verbose",
       "workingDirectory": "."
     }

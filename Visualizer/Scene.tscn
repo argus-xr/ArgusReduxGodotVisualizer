@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bm00ni8kkioq4"]
 
 [ext_resource type="PackedScene" uid="uid://c7672s2c2uocp" path="res://TrackerMarker.tscn" id="2_bv4jd"]
-[ext_resource type="Script" path="res://TrackerVisualizer.cs" id="2_vpegk"]
+[ext_resource type="Script" uid="uid://bkwujwhtntmtv" path="res://TrackerVisualizer.cs" id="2_vpegk"]
 
 [node name="Node3D" type="Node3D"]
 
