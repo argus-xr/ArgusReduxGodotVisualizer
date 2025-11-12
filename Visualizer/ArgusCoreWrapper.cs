@@ -11,13 +11,13 @@ namespace ArgusGodotVisualizer
 	public static class ArgusCoreWrapper
 	{
 		public static readonly IServiceProvider ServiceProvider;
-		public static readonly TrackerManager TrackerManager;
+		public static readonly ITrackerManager TrackerManager;
 		public static readonly IUDPNetworkService UDPNetwork;
 
 		static ArgusCoreWrapper()
 		{
 			ServiceProvider = ArgusCoreService.CreateDefaultSetup();
-			TrackerManager = ServiceProvider.GetRequiredService<TrackerManager>();
+			TrackerManager = ServiceProvider.GetRequiredService<ITrackerManager>();
 			UDPNetwork = ServiceProvider.GetRequiredService<IUDPNetworkService>();
 
 			UDPNetwork.StartListening();
