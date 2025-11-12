@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7q8xbv4s55w2"]
+[gd_scene load_steps=4 format=3 uid="uid://b7q8xbv4s55w2"]
 
 [ext_resource type="Script" uid="uid://dlfusfu2dkccx" path="res://ThroughputLabel.cs" id="1_b3bc3"]
+[ext_resource type="Script" uid="uid://cyg3n4gkc8dan" path="res://CameraFrameDisplay.cs" id="2_3b2b5"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_bp4xx"]
 
@@ -13,28 +14,33 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = SubResource("ImageTexture_bp4xx")
-
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Connected trackers: 0"
 
-[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "RX Throughput: 0b"
 script = ExtResource("1_b3bc3")
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = SubResource("ImageTexture_bp4xx")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("2_3b2b5")
